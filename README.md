@@ -1,4 +1,4 @@
-Oxford Nanopore Direct RNA Sequencing Analysis (RNA004)
+# Oxford Nanopore Direct RNA Sequencing Analysis (RNA004)
 End-to-end bioinformatics analysis of human Oxford Nanopore direct RNA sequencing (DRS) data using Dorado, NanoPlot, minimap2, and Squigualiser.
 Project Overview
 This project analyzes human RNA sequenced with Oxford Nanopore RNA004 chemistry, starting from raw nanopore electrical signals in a POD5 file and proceeding through GPU-accelerated basecalling, quality control, transcriptome alignment, and raw signal-to-reference visualization. The analysis was carried out on the Indiana University Quartz high-performance computing (HPC) cluster as part of MS Bioinformatics coursework.
@@ -49,7 +49,8 @@ Raw POD5/BLOW5 signals, large FASTQ/BAM files, and the complete transcriptome re
 Reproducible Analysis Workflow
 The following commands document the workflow run on Quartz. They were executed in a prepared Linux/HPC environment with the named tools installed. The tool-specific *_env/ paths are local virtual environments from that run; on another machine, replace them with your installed executable paths. GPU basecalling requires appropriate CUDA hardware. Examples identified as equivalent are supplied where the exact original command was not retained.
 0. Project setup
-# Use an existing working directory (for example, a scratch directory on your HPC system).
+  
+ Use an existing working directory (for example, a scratch directory on your HPC system).
 BASE="$PWD"
 mkdir -p "$BASE"/{data,models,basecalling,nanoplot,reference,alignment,signal_data,logs}
 mkdir -p "$BASE/signal_plots/all_target_reads"
