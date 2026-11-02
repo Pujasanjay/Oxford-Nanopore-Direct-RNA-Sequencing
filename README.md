@@ -48,7 +48,8 @@ Data Sources
 Raw POD5/BLOW5 signals, large FASTQ/BAM files, and the complete transcriptome reference are not redistributed in this repository. Obtain them from their original sources and regenerate intermediate files using the workflow below.
 Reproducible Analysis Workflow
 The following commands document the workflow run on Quartz. They were executed in a prepared Linux/HPC environment with the named tools installed. The tool-specific *_env/ paths are local virtual environments from that run; on another machine, replace them with your installed executable paths. GPU basecalling requires appropriate CUDA hardware. Examples identified as equivalent are supplied where the exact original command was not retained.
-0. Project setup
+
+# Project setup
   
  Use an existing working directory (for example, a scratch directory on your HPC system).
 BASE="$PWD"
@@ -154,7 +155,8 @@ The complete run had no plot limit. Squigualiser reported Number of plots: 110, 
 
 To confirm the final output count:
 find "$BASE/signal_plots/all_target_reads" -type f -name '*.html' | wc -l
-# Expected from original run: 110
+
+Expected from original run: 110
 Representative plot: 0e014703-7f84-4b04-9757-7fdc1ae0cf1f_.html, showing the requested region in reverse RNA orientation.
 Interpreting the Results
 The data contained a broad distribution of RNA read lengths. Although most reads were above Q10, only a minority exceeded Q15, illustrating variable basecalling confidence. Transcriptome alignment mapped 94.01% of primary reads to GENCODE v46, demonstrating substantial reference compatibility but not proving that every read had a unique transcript assignment or represented a complete transcript.
